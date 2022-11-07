@@ -3,7 +3,8 @@ class Hero:
 
 hero1 = Hero()
 hero2 = Hero()
-hero3 = Hero();
+hero3 = Hero()
+hero4 = Hero();
 
 hero1.name = "Naruto"
 hero1.health = 100
@@ -13,6 +14,9 @@ hero2.health = 99
 
 hero3.name = "Hinata"
 hero3.health = 95
+
+hero4.name = "Sizuka"
+hero4.health = 90
 
 print(hero1)
 print(hero1.name)
@@ -28,3 +32,8 @@ print(hero3)
 print(hero3.name)
 print(hero3.health)
 print(hero3.__dict__)
+
+print(hero4)
+print(hero4.name)
+print(hero4.health)
+print(hero4.__dict__)
