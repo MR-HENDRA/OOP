@@ -6,7 +6,7 @@ users = [
         "no_rekening": "1234567890",
         "username": "hendra",
         "pin": "4321",
-        "saldo": 0
+        "saldo": 10000000
     },
     {
         "id": "4321",
@@ -45,42 +45,42 @@ def tranfer_uang(uang, no_rekening):
         if users[index1]['saldo'] >= int(uang):
             users[index1]['saldo'] = users[index1]['saldo'] - int(uang)
             users[index2]['saldo'] = users[index2]['saldo'] + int(uang)
-            print("Anda berhasil mentransfer uang Rp." + str(uang) + " ke Rekening " + no_rekening)
-            print("sisa saldo anda adalah Rp.", users[index1]['saldo'])
+            print("Anda Berhasil Mentransfer Uang Rp." + str(uang) + " Ke Rekening " + no_rekening)
+            print("Sisa Saldo Anda Adalah Rp.", users[index1]['saldo'])
         else:
-            print("Ops saldo anda tidak cukup")
+            print("Saldo Anda Tidak Cukup")
 
 def ambil_uang(uang):
     index1 = cek_user(user_id)
     if index1 >= 0:
         if users[index1]['saldo'] >= int(uang):
             users[index1]['saldo'] = users[index1]['saldo'] - int(uang)
-            print("Anda berhasil menarik uang Rp." + str(uang))
-            print("sisa saldo anda adalah Rp.", users[index1]['saldo'])
+            print("Anda Berhasil Menarik Uang Rp." + str(uang))
+            print("Sisa Saldo Anda Adalah Rp.", users[index1]['saldo'])
         else:
-            print("Ops saldo anda tidak cukup")
+            print("Saldo Anda Tidak Cukup")
 
 while pakai_atm == "y":
     while not status_login:
-        print("SELAMAT DATANG DI ATM BANK UNSULBAR")
-        print("Silahkan masukan pin anda")
+        print("--- SELAMAT DATANG DI ATM BANK UNSULBAR ---")
+        print("Silahkan Masukan PIN Anda")
         pin = input("Masukan PIN : ")
 
         cl = cek_login(pin)
         if cl:
-            print("selamat datang " + cl['username'])
+            print("Selamat Datang " + cl['username'])
             user_id = cl['id']
             status_login = True
             loop = "y"
         else:
             print("")
-            print("Ops PIN anda salah")
+            print("PIN Anda Salah")
             print("")
             print("")
 
     while loop == "y" and status_login:
         u = users[cek_user(user_id)]
-        print("SELAMAT DATANG DI ATM Pesonainformatika")
+        print("--- SELAMAT DATANG DI ATM BANK UNSULBAR ---")
         print("1.Cek Saldo")
         print("2.Transfer Uang")
         print("3.Ambil Uang")
@@ -89,7 +89,7 @@ while pakai_atm == "y":
         a = int(input("Silahkan pilih menu : "))
         if a == 1:
             print("")
-            print("Sisa Saldo anda adalah Rp.", u['saldo'])
+            print("Sisa Saldo Anda Adalah Rp.", u['saldo'])
             print("")
             print("")
             loop = "n"
@@ -99,14 +99,14 @@ while pakai_atm == "y":
             cnk = cek_rekening(no_rek)
  
             if cnk >= 0:
-                print("Nomor rekening ditemukan,silahkan masukan nominal yang yang akan di transfer")
-                nominal = input("Nominal Yang Akan Di Transfer : ")
+                print("Nomor Rekening Ditemukan, Silahkan Masukan Nominal Yang Akan Ditransfer")
+                nominal = input("Nominal Yang Akan Ditransfer : ")
                 tranfer_uang(nominal, no_rek)
                 print("")
                 loop = "n"
             else:
                 print("")
-                print("Nomor Rekening Tujuan Tidak ditemukan atau tidak terdaftar")
+                print("Nomor Rekening Tujuan Tidak Ditemukan Atau Tidak Terdaftar")
                 print("")
                 loop = "n"
  
@@ -119,12 +119,13 @@ while pakai_atm == "y":
             status_login = False
  
         elif a == 5:
+            print("Terimakasih Telah Menggunakan ATM BANK UNSULBAR")
             status_login = False
             loop = "n"
             pakai_atm = "n"
         else:
-            print("pilihan tidak tersedia")
+            print("Pilihan Tidak Tersedia")
         if status_login == True:
-            input("kembali Ke menu (Enter) ")
+            input("Kembali Ke Menu (Enter) ")
             print("")
             loop = "y"
