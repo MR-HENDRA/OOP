@@ -1,3 +1,7 @@
+# NAMA  = HENDRA USMAN
+# NIM   = D0221079
+# KELAS = F - INFORMATIKA
+
 def line():
     print("="*50)
 
