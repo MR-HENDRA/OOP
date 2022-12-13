@@ -1,3 +1,4 @@
+# CLASS LUAS
 class Luas:
   def __init__(self, sisi, alas, tinggi, jari_jari):
     self.sisi = sisi
@@ -17,6 +18,7 @@ class Luas:
     rumus_luas_lingkaran = 22/7 * self.jari_jari * self.jari_jari
     print("Luas Lingkaran :", rumus_luas_lingkaran)
 
+# CLASS VOLUME
 class Volume:
   def __init__(self, sisi, alas, tinggi, tinggi_limas, jari_jari):
     self.sisi = sisi
@@ -38,7 +40,6 @@ class Volume:
     print("Volume Tabung : ", rumus_volume_tabung)
 
 # MENU
-
 while True:
     print(" ")
     print("=" * 50)
