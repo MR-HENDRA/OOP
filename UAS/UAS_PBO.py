@@ -1,3 +1,7 @@
+# NAMA  : HENDRA USMAN
+# NIM   : D0221079
+# KELAS : INFORMATIKA - F
+
 # CLASS LUAS
 class Luas:
   def __init__(self, sisi, alas, tinggi, jari_jari):
